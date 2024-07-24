@@ -22,33 +22,33 @@ namespace MathollDesktopApplication
     /// </summary>
     public partial class MainWindow : Window
     {
-        private Auth0Client _client;
         public MainWindow()
         {
             InitializeComponent();
-            CheckLoginStatus();
+            CheckLoginStatusAsync();
+        }
 
+        private async void CheckLoginStatusAsync()
+        {
             if (!AuthService.Instance.IsLoggedIn)
             {
                 this.Hide();
-                Login login = new();
-                login.Show();
+                await AuthService.Instance.LogIn();
             }
-        }
 
-        private void CheckLoginStatus()
-        {
             if (AuthService.Instance.IsLoggedIn)
             {
                 var user = AuthService.Instance.LoginResult.User;
                 var name = user.FindFirst(c => c.Type == "name")?.Value;
-                var email = user.FindFirst(c => c.Type=="email")?.Value;
-                MessageBox.Show($"Welcome {name} ({email})");
+                var email = user.FindFirst(c => c.Type == "email")?.Value;
+                this.Show();
             }
-            else
-            {
-                MessageBox.Show("User is not logged in");
-            }
+        }
+
+        private async void Button_Click(object sender, RoutedEventArgs e)
+        {
+            await AuthService.Instance.LogOut();
+            CheckLoginStatusAsync();
         }
     }
 }

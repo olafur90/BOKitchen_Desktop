@@ -13,8 +13,6 @@ C:\Users\Notandi\source\repos\MathollDesktopApplication\MathollDesktopApplicatio
 C:\Users\Notandi\source\repos\MathollDesktopApplication\MathollDesktopApplication\obj\Debug\MathollDesktopApplication.csproj.CoreCompileInputs.cache
 C:\Users\Notandi\source\repos\MathollDesktopApplication\MathollDesktopApplication\obj\Debug\MathollDesktopApplication.exe
 C:\Users\Notandi\source\repos\MathollDesktopApplication\MathollDesktopApplication\obj\Debug\MathollDesktopApplication.pdb
-C:\Users\Notandi\source\repos\MathollDesktopApplication\MathollDesktopApplication\obj\Debug\Login.g.cs
-C:\Users\Notandi\source\repos\MathollDesktopApplication\MathollDesktopApplication\obj\Debug\Login.baml
 C:\Users\Notandi\source\repos\MathollDesktopApplication\MathollDesktopApplication\bin\Debug\runtimes\win-x86\native\WebView2Loader.dll
 C:\Users\Notandi\source\repos\MathollDesktopApplication\MathollDesktopApplication\bin\Debug\runtimes\win-x64\native\WebView2Loader.dll
 C:\Users\Notandi\source\repos\MathollDesktopApplication\MathollDesktopApplication\bin\Debug\runtimes\win-arm64\native\WebView2Loader.dll
