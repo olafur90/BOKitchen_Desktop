@@ -23,20 +23,16 @@ namespace MathollDesktopApplication
             LoginResult = loginResult;
         }
 
+        public AuthService() 
+        {
+            InitializeClient();
+        }
+
         public bool IsLoggedIn => LoginResult != null && !LoginResult.IsError;
 
         public async void LogIn() 
         {
             LoginResult = null;
-            Auth0ClientOptions clientOptions = new Auth0ClientOptions
-            {
-                Domain = "dev-72yh0oy5imbdaqx8.eu.auth0.com",
-                ClientId = "4nF5fHwCq9DXNsO0JLkQBY9rxXfMQcy4",
-                RedirectUri = "myapp://callback"
-            };
-            _client = new Auth0Client(clientOptions);
-            clientOptions.PostLogoutRedirectUri = clientOptions.PostLogoutRedirectUri;
-
             var loginResult = await _client.LoginAsync();
 
             if (loginResult.IsError == false)
@@ -51,6 +47,18 @@ namespace MathollDesktopApplication
             {
                 MessageBox.Show("Error: " + loginResult.Error);
             }
+        }
+
+        public void InitializeClient()
+        {
+            Auth0ClientOptions clientOptions = new Auth0ClientOptions
+            {
+                Domain = Properties.Resources.DomainName,
+                ClientId = Properties.Resources.ClientId,
+                RedirectUri = Properties.Resources.RedirectUri,
+            };
+            _client = new Auth0Client(clientOptions);
+            clientOptions.PostLogoutRedirectUri = clientOptions.PostLogoutRedirectUri;
         }
     }
 }
