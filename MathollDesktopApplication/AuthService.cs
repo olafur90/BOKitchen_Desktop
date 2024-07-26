@@ -32,19 +32,26 @@ namespace MathollDesktopApplication
 
         public async Task<bool> LogIn() 
         {
-            LoginResult = null;
-            var loginResult = await _client.LoginAsync();
+            try
+            {
+                LoginResult = null;
+                var loginResult = await _client.LoginAsync();
 
-            if (loginResult.IsError == false)
-            {
-                AuthService.Instance.SetLoginResult(loginResult);
-                return true;
+                if (loginResult.IsError == false)
+                {
+                    AuthService.Instance.SetLoginResult(loginResult);
+                    return true;
+                }
+                else
+                {
+                    throw new Exception();
+                }
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("Error: " + loginResult.Error);
+                Console.WriteLine(ex.Message);
+                return false;
             }
-            return false;
         }
 
         public async Task<bool> LogOut()
@@ -76,7 +83,6 @@ namespace MathollDesktopApplication
                 PostLogoutRedirectUri = "http://localhost:5000"
             };
             _client = new Auth0Client(clientOptions);
-            clientOptions.PostLogoutRedirectUri = clientOptions.PostLogoutRedirectUri;
         }
     }
 }

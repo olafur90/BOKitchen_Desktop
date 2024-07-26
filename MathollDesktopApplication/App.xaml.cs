@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Extensions.DependencyInjection;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
@@ -8,9 +9,6 @@ using System.Windows;
 
 namespace MathollDesktopApplication
 {
-    /// <summary>
-    /// Interaction logic for App.xaml
-    /// </summary>
     public partial class App : Application
     {
     }
