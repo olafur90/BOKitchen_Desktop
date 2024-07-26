@@ -4,21 +4,19 @@ using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
-using MathollDesktopApplication.Entities;
 using MathollDesktopApplication.Modules.Recipes.Queries.GetAllRecipesRequest;
 using MathollDesktopApplication.Modules.Recipes.RecipeWindow;
 using Wpf.Ui.Controls;
 
 namespace MathollDesktopApplication
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
+    /// <inheritdoc />
     public partial class MainWindow : FluentWindow
     {
         private const int Columns = 4;
         RecipeDTO[] recipes;
 
+        /// <inheritdoc />
         public MainWindow()
         {
             InitializeComponent();
@@ -28,10 +26,11 @@ namespace MathollDesktopApplication
         }
 
         /// <summary>
-        /// 
+        /// Event handler that is triggered whenever the main window is resized.
+        /// Adjusts the widths of the buttons to maintain consistent layout.
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+        /// <param name="sender">The source of the event, typically the main window.</param>
+        /// <param name="e">Provides data for the SizeChanged event, including the new size of the window.</param>
         private void MainWindow_SizeChanged(object sender, SizeChangedEventArgs e)
         {
             // Adjust button widths when the window size changes
@@ -39,7 +38,7 @@ namespace MathollDesktopApplication
         }
 
         /// <summary>
-        /// 
+        /// Adjusts the width of the buttons in GridRecipeButtons to be dynamic with window resizing.
         /// </summary>
         private void AdjustButtonWidths()
         {
@@ -66,22 +65,19 @@ namespace MathollDesktopApplication
         {
             recipes = await GetAllRecipesBasic.GetRecipes();
 
-            // Number of columns
-            int columns = 4;
-
             // Clear previous content
             GridRecipeButtons.Children.Clear();
             GridRecipeButtons.RowDefinitions.Clear();
             GridRecipeButtons.ColumnDefinitions.Clear();
 
             // Define the columns
-            for (int i = 0; i < columns; i++)
+            for (int i = 0; i < Columns; i++)
             {
                 GridRecipeButtons.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
             }
 
             // Define the rows based on the number of recipes
-            int rows = (int)Math.Ceiling((double)recipes.Length / columns);
+            int rows = (int)Math.Ceiling((double)recipes.Length / Columns);
             for (int i = 0; i < rows; i++)
             {
                 GridRecipeButtons.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Auto) });
@@ -109,11 +105,10 @@ namespace MathollDesktopApplication
                 };
 
                 temp.Content = textBlock;
-
                 temp.Click += Temp_Click;
 
-                int row = i / columns;
-                int column = i % columns;
+                int row = i / Columns;
+                int column = i % Columns;
 
                 Grid.SetRow(temp, row);
                 Grid.SetColumn(temp, column);
@@ -204,10 +199,7 @@ namespace MathollDesktopApplication
         /// </remarks>
         private void Grid_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            if (e.ChangedButton == MouseButton.Left)
-            {
-                this.DragMove();
-            }
+            if (e.ChangedButton == MouseButton.Left) this.DragMove();
         }
 
         /// <summary>
@@ -221,6 +213,7 @@ namespace MathollDesktopApplication
         /// </remarks>
         private void BtnCloseApplication_Click(object sender, RoutedEventArgs e)
         {
+            // TODO: Save some configurations?
             this.Close();
         }
     }

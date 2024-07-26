@@ -1,20 +1,7 @@
 ﻿using MathollDesktopApplication.Entities;
 using MathollDesktopApplication.Modules.Recipes.Queries.GetSingleRecipe;
-using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
-using Wpf.Ui.Controls;
 
 namespace MathollDesktopApplication.Modules.Recipes.RecipeWindow
 {
@@ -25,6 +12,11 @@ namespace MathollDesktopApplication.Modules.Recipes.RecipeWindow
     {
         private readonly int id;
         Recipe recipe;
+
+        /// <summary>
+        /// The constructor, instantiates the id variable and initializes the component.
+        /// </summary>
+        /// <param name="id"></param>
         public RecipeWindow(int id)
         {
             InitializeComponent();
@@ -32,16 +24,25 @@ namespace MathollDesktopApplication.Modules.Recipes.RecipeWindow
             Loaded += RecipeWindow_Loaded;
         }
 
+        /// <summary>
+        /// Waits for the Window to be done loading before fetching the recipe.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private async void RecipeWindow_Loaded(object sender, RoutedEventArgs e)
         {
             await FetchRecipe();
         }
 
+        /// <summary>
+        /// Fetches the recipe from the API with the given id
+        /// </summary>
+        /// <returns>A recipe object matching the requested id</returns>
         public async Task<Recipe> FetchRecipe()
         {
             var instance = new GetRecipeById(id);
             recipe = await instance.GetRecipe();
-            System.Windows.MessageBox.Show(recipe.ToString());
+            
             return recipe;
         }
     }
