@@ -206,6 +206,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Entities\SousVideItem.cs" />
     <Compile Include="Modules\Recipes\Queries\GetAllRecipes\RecipeCache.cs" />
     <Compile Include="UserControls\AirFryerView.xaml.cs">
       <DependentUpon>AirFryerView.xaml</DependentUpon>
@@ -280,6 +281,9 @@
     <Content Include="appsettings.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Assets\SousVideHitatafla.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -305,7 +309,6 @@
     <Resource Include="bola_logo.png" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Assets\" />
     <Folder Include="Modules\Comments\Commands\DeleteAllCommentsByUser\" />
     <Folder Include="Modules\Comments\Commands\DeleteAllComments\" />
     <Folder Include="Modules\Comments\Commands\DeleteCommentByQuery\" />
