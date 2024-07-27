@@ -116,3 +116,4 @@ C:\Users\Notandi\source\repos\MathollDesktopApplication\MathollDesktopApplicatio
 C:\Users\Notandi\source\repos\MathollDesktopApplication\MathollDesktopApplication\obj\Debug\UserControls\SousVideView.g.cs
 C:\Users\Notandi\source\repos\MathollDesktopApplication\MathollDesktopApplication\obj\Debug\UserControls\AirFryerView.baml
 C:\Users\Notandi\source\repos\MathollDesktopApplication\MathollDesktopApplication\obj\Debug\UserControls\SousVideView.baml
+C:\Users\Notandi\source\repos\MathollDesktopApplication\MathollDesktopApplication\bin\Debug\Assets\SousVideHitatafla.json

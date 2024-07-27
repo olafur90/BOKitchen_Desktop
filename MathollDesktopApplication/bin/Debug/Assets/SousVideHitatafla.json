@@ -1,0 +1,436 @@
+﻿{
+  "name": "Sous Vide eldunartafla",
+  "data": [
+    {
+      "name": "Nautakjöt",
+      "temperatures": [
+        {
+          "label": "Nautalund",
+          "thickness": "2,5 cm",
+          "celsius": "52-56°C",
+          "minimum": "1 klst",
+          "medium": "2.5 klst",
+          "maximum": "5 klst"
+        },
+        {
+          "label": "Nauta rib-eye",
+          "thickness": "2,5 cm",
+          "celsius": "52-56°C",
+          "minimum": "3 klst",
+          "medium": "5 klst",
+          "maximum": "12 klst"
+        },
+        {
+          "label": "Nauta entrecot / sirloin",
+          "thickness": "5 cm",
+          "celsius": "52-56°C",
+          "minimum": "1.5 klst",
+          "medium": "3 klst",
+          "maximum": "5 klst"
+        },
+        {
+          "label": "Nauta rif",
+          "thickness": "4 cm",
+          "celsius": "56-58°C",
+          "minimum": "12 klst",
+          "medium": "18 klst",
+          "maximum": "?"
+        },
+        {
+          "label": "Nauta klumpur (roastbeef)",
+          "thickness": "10 cm",
+          "celsius": "52-54°C",
+          "minimum": "5 klst",
+          "medium": "6 klst",
+          "maximum": "?"
+        },
+        {
+          "label": "Nauta brisket",
+          "thickness": "8 cm",
+          "celsius": "56-60°C",
+          "minimum": "12 klst",
+          "medium": "18 klst",
+          "maximum": "?"
+        },
+        {
+          "label": "Nauta flank steik",
+          "thickness": "5 cm",
+          "celsius": "56-60°C",
+          "minimum": "8 klst",
+          "medium": "12 klst",
+          "maximum": "?"
+        },
+        {
+          "label": "Nauta fillet",
+          "thickness": "3 cm",
+          "celsius": "52-56°C",
+          "minimum": "1.5 klst",
+          "medium": "3 klst",
+          "maximum": "5 klst"
+        }
+      ]
+    },
+    {
+      "name": "Lambakjöt",
+      "temperatures": [
+        {
+          "label": "Lambalæri",
+          "thickness": "2 kg",
+          "celsius": "56-60°C",
+          "minimum": "6 klst",
+          "medium": "8 klst",
+          "maximum": "12 klst"
+        },
+        {
+          "label": "Lambahryggur (úrbeinaður)",
+          "thickness": "1,5 kg",
+          "celsius": "56-60°C",
+          "minimum": "2.5 klst",
+          "medium": "4 klst",
+          "maximum": "7 klst"
+        },
+        {
+          "label": "Lambalæri (úrbeinað)",
+          "thickness": "1,5 kg",
+          "celsius": "56-60°C",
+          "minimum": "6 klst",
+          "medium": "8 klst",
+          "maximum": "12 klst"
+        },
+        {
+          "label": "Lambalundir",
+          "thickness": "500 g",
+          "celsius": "56-60°C",
+          "minimum": "1.5 klst",
+          "medium": "2 klst",
+          "maximum": "5 klst"
+        },
+        {
+          "label": "Lamba prime",
+          "thickness": "250 g",
+          "celsius": "58-65°C",
+          "minimum": "1 klst",
+          "medium": "2 klst",
+          "maximum": "5 klst"
+        },
+        {
+          "label": "Lamba lærissneiðar",
+          "thickness": "200 g",
+          "celsius": "56-60°C",
+          "minimum": "45 mín",
+          "medium": "1 klst",
+          "maximum": "1,5 klst"
+        },
+        {
+          "label": "Hangikjöt (útvatnast fyrst)",
+          "thickness": "1 kg",
+          "celsius": "58-60°C",
+          "minimum": "2 klst",
+          "medium": "4 klst",
+          "maximum": "6 klst"
+        }
+      ]
+    },
+    {
+      "name": "Svínakjöt",
+      "temperatures": [
+        {
+          "label": "Svínalund",
+          "thickness": "2 cm",
+          "celsius": "59-62°C",
+          "minimum": "1 klst",
+          "medium": "3 klst",
+          "maximum": "4 klst"
+        },
+        {
+          "label": "Svína kótilettur",
+          "thickness": "1,5 cm",
+          "celsius": "60-62°C",
+          "minimum": "1 klst",
+          "medium": "1,5 klst",
+          "maximum": "2 klst"
+        },
+        {
+          "label": "Svínahnakki (pulled pork)",
+          "thickness": "5 cm",
+          "celsius": "60-62°C",
+          "minimum": "4 klst",
+          "medium": "8 klst",
+          "maximum": "?"
+        },
+        {
+          "label": "Svínarif",
+          "thickness": "2 cm",
+          "celsius": "62°C",
+          "minimum": "24 klst",
+          "medium": "36 klst",
+          "maximum": "48 klst"
+        },
+        {
+          "label": "Hamborgarhryggur",
+          "thickness": "10 cm",
+          "celsius": "60-64°C",
+          "minimum": "4 klst",
+          "medium": "5 klst",
+          "maximum": "8 klst"
+        }
+      ]
+    },
+    {
+      "name": "Folaldakjöt",
+      "temperatures": [
+        {
+          "label": "Folaldalund",
+          "thickness": "2 cm",
+          "celsius": "52-56°C",
+          "minimum": "1 klst",
+          "medium": "2,5 klst",
+          "maximum": "5 klst"
+        },
+        {
+          "label": "Folalda fillet",
+          "thickness": "1,5 cm",
+          "celsius": "52-56°C",
+          "minimum": "1 klst",
+          "medium": "3 klst",
+          "maximum": "4 klst"
+        }
+      ]
+    },
+    {
+      "name": "Hreindýrakjöt",
+      "temperatures": [
+        {
+          "label": "Hreindýra innanlæri",
+          "thickness": "3 cm",
+          "celsius": "52-56°C",
+          "minimum": "2 klst",
+          "medium": "3 klst",
+          "maximum": "5 klst"
+        },
+        {
+          "label": "Hreindýralund",
+          "thickness": "2 cm",
+          "celsius": "52-56°C",
+          "minimum": "1,5 klst",
+          "medium": "3 klst",
+          "maximum": "5 klst"
+        }
+      ]
+    },
+    {
+      "name": "Kjúklingur",
+      "temperatures": [
+        {
+          "label": "Kjúklingabringa",
+          "thickness": "2,5 cm",
+          "celsius": "65°C",
+          "minimum": "1 klst",
+          "medium": "2 klst",
+          "maximum": "3 klst"
+        },
+        {
+          "label": "Kjúklingaleggir",
+          "thickness": "2,5 cm",
+          "celsius": "65-70°C",
+          "minimum": "3 klst",
+          "medium": "4 klst",
+          "maximum": "6 klst"
+        },
+        {
+          "label": "Kjúklingavængir",
+          "thickness": "1,5 cm",
+          "celsius": "65-70°C",
+          "minimum": "3 klst",
+          "medium": "4 klst",
+          "maximum": "6 klst"
+        }
+      ]
+    },
+    {
+      "name": "Kalkúnn",
+      "temperatures": [
+        {
+          "label": "Kalkúnabringa",
+          "thickness": "700 g",
+          "celsius": "64°C",
+          "minimum": "2,5 klst",
+          "medium": "3 klst",
+          "maximum": "24 klst"
+        },
+        {
+          "label": "Kalkúnaskip",
+          "thickness": "1,5 kg",
+          "celsius": "64°C",
+          "minimum": "3 klst",
+          "medium": "5 klst",
+          "maximum": "24 klst"
+        },
+        {
+          "label": "Kalkúnaleggir",
+          "thickness": "4 cm",
+          "celsius": "65-70°C",
+          "minimum": "6 klst",
+          "medium": "8 klst",
+          "maximum": "?"
+        }
+      ]
+    },
+    {
+      "name": "Önd",
+      "temperatures": [
+        {
+          "label": "Ali-Andabringa",
+          "thickness": "2,5 cm",
+          "celsius": "51-56°C",
+          "minimum": "45 mín",
+          "medium": "2,5 klst",
+          "maximum": "3 klst"
+        },
+        {
+          "label": "Stokkandabringa",
+          "thickness": "1,5 kg",
+          "celsius": "51-56°C",
+          "minimum": "45 mín",
+          "medium": "2,5 klst",
+          "maximum": "3 klst"
+        },
+        {
+          "label": "Stokkandaleggir (confit)",
+          "thickness": "2,5 cm",
+          "celsius": "80°C",
+          "minimum": "8 klst",
+          "medium": "12 klst",
+          "maximum": "?"
+        }
+      ]
+    },
+    {
+      "name": "Gæs",
+      "temperatures": [
+        {
+          "label": "Gæsabringa",
+          "thickness": "4 cm",
+          "celsius": "51-56°C",
+          "minimum": "45 mín",
+          "medium": "2,5 klst",
+          "maximum": "3 klst"
+        },
+        {
+          "label": "Gæsaleggir",
+          "thickness": "3 cm",
+          "celsius": "80°C",
+          "minimum": "8 klst",
+          "medium": "12 klst",
+          "maximum": "?"
+        }
+      ]
+    },
+    {
+      "name": "Fiskur",
+      "temperatures": [
+        {
+          "label": "Lax",
+          "thickness": "?",
+          "celsius": "45-55°C",
+          "minimum": "?",
+          "medium": "25 mín",
+          "maximum": "?"
+        },
+        {
+          "label": "Þorskhnakki",
+          "thickness": "?",
+          "celsius": "50°C",
+          "minimum": "30 mín",
+          "medium": "45 mín",
+          "maximum": "1 klst"
+        },
+        {
+          "label": "Lúða",
+          "thickness": "?",
+          "celsius": "50°C",
+          "minimum": "30 mín",
+          "medium": "45 mín",
+          "maximum": "1 klst"
+        },
+        {
+          "label": "Koli",
+          "thickness": "?",
+          "celsius": "50°C",
+          "minimum": "30 mín",
+          "medium": "45 mín",
+          "maximum": "1 klst"
+        },
+        {
+          "label": "Skata",
+          "thickness": "?",
+          "celsius": "60°C",
+          "minimum": "45 mín",
+          "medium": "1 klst",
+          "maximum": "90 mín"
+        }
+      ]
+    },
+    {
+      "name": "Annað",
+      "temperatures": [
+        {
+          "label": "Hleypt egg",
+          "thickness": "?",
+          "celsius": "62-68°C",
+          "minimum": "?",
+          "medium": "45 mín",
+          "maximum": "?"
+        },
+        {
+          "label": "Linsoðið egg",
+          "thickness": "?",
+          "celsius": "68-73°C",
+          "minimum": "?",
+          "medium": "45 mín",
+          "maximum": "?"
+        },
+        {
+          "label": "Eggjahræra",
+          "thickness": "?",
+          "celsius": "75°C",
+          "minimum": "?",
+          "medium": "15 mín",
+          "maximum": "?"
+        },
+        {
+          "label": "Aspas, blómkál, brokkolí, etc.",
+          "thickness": "?",
+          "celsius": "82°C",
+          "minimum": "10 mín",
+          "medium": "15 mín",
+          "maximum": "20 mín"
+        },
+        {
+          "label": "Kartöflur og rótargrænmeti",
+          "thickness": "?",
+          "celsius": "85°C",
+          "minimum": "1 klst",
+          "medium": "1,5-2 klst",
+          "maximum": "3 klst"
+        },
+        {
+          "label": "Ávextir f/deserti (mýking)",
+          "thickness": "?",
+          "celsius": "68°C",
+          "minimum": "1 klst",
+          "medium": "1,5 klst",
+          "maximum": "2-2,5 klst"
+        },
+        {
+          "label": "Ávextir f/mauk",
+          "thickness": "?",
+          "celsius": "85°C",
+          "minimum": "30 mín",
+          "medium": "1 klst",
+          "maximum": "1,5 klst"
+        }
+      ]
+    }
+  ]
+}

@@ -150,7 +150,7 @@ namespace MathollDesktopApplication
             if (sender is Wpf.Ui.Controls.Button button && button.Tag is int index)
             {
                 // Open the RecipeWindow with the recipe ID
-                RecipeWindow recipeWindow = new RecipeWindow(recipes[index].Id);
+                RecipeWindow recipeWindow = new(recipes[index].Id);
                 recipeWindow.Show();
             }
         }

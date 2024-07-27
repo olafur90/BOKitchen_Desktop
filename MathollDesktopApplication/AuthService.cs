@@ -102,7 +102,7 @@ namespace MathollDesktopApplication
         /// </summary>
         public void InitializeClient()
         {
-            Auth0ClientOptions clientOptions = new Auth0ClientOptions
+            Auth0ClientOptions clientOptions = new()
             {
                 Domain = Properties.Resources.DomainName,
                 ClientId = Properties.Resources.ClientId,
