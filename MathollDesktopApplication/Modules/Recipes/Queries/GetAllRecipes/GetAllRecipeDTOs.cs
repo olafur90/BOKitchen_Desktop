@@ -20,8 +20,8 @@ namespace MathollDesktopApplication.Modules.Recipes.Queries.GetAllRecipesRequest
                 if (response.IsSuccessStatusCode)
                 {
                     string jsonResponse = await response.Content.ReadAsStringAsync();
-                    Debug.Write(jsonResponse);
                     recipes = JsonConvert.DeserializeObject<RecipeDTO[]>(jsonResponse);
+                    Debug.WriteLine("Called the API");
                 }
             }
             catch (HttpRequestException e)

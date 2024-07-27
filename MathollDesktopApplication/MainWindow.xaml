@@ -5,7 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:materialIcons="clr-namespace:Material.Icons;assembly=Material.Icons"
         xmlns:local="clr-namespace:MathollDesktopApplication"
-        xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml" x:Name="mainWindow" x:Class="MathollDesktopApplication.MainWindow"
+        xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml" 
+        x:Name="mainWindow" 
+        x:Class="MathollDesktopApplication.MainWindow"
         mc:Ignorable="d"
         Title="BÓ Kitchen" Height="800" Width="1600" MinWidth="800" MinHeight="400">
     <Window.Resources>
@@ -22,7 +24,7 @@
             <Button Content="U" Margin="0,95,10,0" Background="Gray" HorizontalAlignment="Right" VerticalAlignment="Top" Height="42" Width="50"/>
         </Grid>
         <Grid x:Name="GridMenu" Width="210" HorizontalAlignment="Left" Background="Black" Panel.ZIndex="0" >
-            <Button Content="Uppskriftir" FontWeight="Bold" FontSize="32" HorizontalAlignment="Stretch" Height="70" Opacity="0.92" Margin="0,168,0,0" VerticalAlignment="Top" Background="#FF21441C">
+            <Button x:Name="BtnMenuButtonRecipes" Content="Uppskriftir" FontWeight="Bold" FontSize="32" HorizontalAlignment="Stretch" Height="70" Opacity="0.92" Margin="0,168,0,0" VerticalAlignment="Top" Background="#FF21441C" Click="BtnMenuButtonRecipes_Click">
                 <Button.Template>
                     <ControlTemplate TargetType="Button">
                         <Border x:Name="border" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="0" CornerRadius="0">
@@ -44,7 +46,7 @@
                     </ControlTemplate>
                 </Button.Template>
             </Button>
-            <Button Content="Notendur" FontWeight="Bold" HorizontalAlignment="Stretch" Height="70" Opacity="0.92" Margin="0,238,0,0" VerticalAlignment="Top" Background="#FF21441C">
+            <Button x:Name="BtnMenuButtonUsers" Content="Notendur" FontWeight="Bold" HorizontalAlignment="Stretch" Height="70" Opacity="0.92" Margin="0,238,0,0" VerticalAlignment="Top" Background="#FF21441C">
                 <Button.Template>
                     <ControlTemplate TargetType="{x:Type Button}">
                         <Border x:Name="border" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="0" CornerRadius="0">
@@ -66,7 +68,7 @@
                     </ControlTemplate>
                 </Button.Template>
             </Button>
-            <Button Content="Sous Vide" FontWeight="Bold" HorizontalAlignment="Stretch" Height="70" Opacity="0.92" Margin="0,308,0,0" VerticalAlignment="Top" Background="#FF21441C">
+            <Button x:Name="BtnMenuButtonSousVide" Content="Sous Vide" FontWeight="Bold" HorizontalAlignment="Stretch" Height="70" Opacity="0.92" Margin="0,308,0,0" VerticalAlignment="Top" Background="#FF21441C" Click="BtnMenuButtonSousVide_Click">
                 <Button.Template>
                     <ControlTemplate TargetType="{x:Type Button}">
                         <Border x:Name="border" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="0" CornerRadius="0">
@@ -86,7 +88,7 @@
                     </ControlTemplate>
                 </Button.Template>
             </Button>
-            <Button Content="Air Fryer" FontWeight="Bold" HorizontalAlignment="Stretch" Height="70" Opacity="0.92" Margin="0,378,0,0" VerticalAlignment="Top" Background="#FF21441C">
+            <Button x:Name="BtnMenuButtonAirFryer" Content="Air Fryer" FontWeight="Bold" HorizontalAlignment="Stretch" Height="70" Opacity="0.92" Margin="0,378,0,0" VerticalAlignment="Top" Background="#FF21441C" Click="BtnMenuButtonAirFryer_Click">
                 <Button.Template>
                     <ControlTemplate TargetType="{x:Type Button}">
                         <Border x:Name="border" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="0" CornerRadius="0">
@@ -116,7 +118,7 @@
                     <TranslateTransform X="0.748"/>
                 </TransformGroup>
             </ScrollViewer.RenderTransform>
-            <Grid x:Name="GridRecipeButtons" />
+            <ContentControl x:Name="MainContentControl" />
         </ScrollViewer>
     </Grid>
 </ui:FluentWindow>

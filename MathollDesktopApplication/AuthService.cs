@@ -2,34 +2,54 @@
 using IdentityModel.OidcClient;
 using IdentityModel.OidcClient.Browser;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
-using System.Windows;
 
 namespace MathollDesktopApplication
 {
+    /// <summary>
+    /// Sets up the Auth0 OidcClient and provides functionality to log in and log out
+    /// </summary>
     internal class AuthService
     {
+        // Auth0 Client
         private Auth0Client _client;
+
+        // Singleton instance
         private static AuthService _instance;
+
+        // Private constructor
         public static AuthService Instance => _instance ??= new AuthService();
 
+        // Properties for the login result
         public LoginResult LoginResult { get; private set; }
 
+        /// <summary>
+        /// Sets the login result
+        /// </summary>
+        /// <param name="loginResult">The login result</param>
         public void SetLoginResult(LoginResult loginResult)
         {
             LoginResult = loginResult;
         }
 
+        /// <summary>
+        /// Initializes the Auth0 OidcClient
+        /// </summary>
         public AuthService() 
         {
             InitializeClient();
         }
 
+        /// <summary>
+        /// Checks if the user is logged in
+        /// </summary>
+        /// <returns>True if the user is logged in, false otherwise</returns>
         public bool IsLoggedIn => LoginResult != null && !LoginResult.IsError;
 
+        /// <summary>
+        /// Logs in the user
+        /// </summary>
+        /// <returns>The login result</returns>
         public async Task<bool> LogIn() 
         {
             try
@@ -54,6 +74,10 @@ namespace MathollDesktopApplication
             }
         }
 
+        /// <summary>
+        /// Logs out the user
+        /// </summary>
+        /// <returns>True if the logout was successful, false otherwise</returns>
         public async Task<bool> LogOut()
         {
             try
@@ -73,6 +97,9 @@ namespace MathollDesktopApplication
             }
         }
 
+        /// <summary>
+        /// Initializes the Auth0 OidcClient with the specified options
+        /// </summary>
         public void InitializeClient()
         {
             Auth0ClientOptions clientOptions = new Auth0ClientOptions
