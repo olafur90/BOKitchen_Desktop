@@ -232,7 +232,7 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Modules\Recipes\Queries\GetAllRecipes\GetAllRecipesBasic.cs" />
+    <Compile Include="Modules\Recipes\Queries\GetAllRecipes\GetAllRecipeDTOs.cs" />
     <Compile Include="Modules\Recipes\Queries\GetAllRecipes\RecipeDTO.cs" />
     <Compile Include="Modules\Recipes\Queries\GetSingleRecipe\GetRecipeById.cs" />
     <Compile Include="Modules\Recipes\RecipeWindow\RecipeWindow.xaml.cs">

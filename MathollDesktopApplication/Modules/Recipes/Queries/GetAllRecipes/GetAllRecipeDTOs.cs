@@ -2,12 +2,11 @@
 using System.Diagnostics;
 using System.Net.Http;
 using System.Threading.Tasks;
-using MathollDesktopApplication.Entities;
 using Newtonsoft.Json;
 
 namespace MathollDesktopApplication.Modules.Recipes.Queries.GetAllRecipesRequest
 {
-    public static class GetAllRecipesBasic
+    public static class GetAllRecipeDTOs
     {
         public static async Task<RecipeDTO[]> GetRecipes()
         {

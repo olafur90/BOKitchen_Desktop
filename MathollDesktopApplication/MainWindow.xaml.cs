@@ -63,12 +63,14 @@ namespace MathollDesktopApplication
         /// TODO: So, basically should be calling something like GetRecipesShort or something like that, and later call GetRecipeWithDetail when clicked.
         public async void GetAllRecipesForFrontPage()
         {
-            recipes = await GetAllRecipesBasic.GetRecipes();
+            recipes = await GetAllRecipeDTOs.GetRecipes();
 
             // Clear previous content
             GridRecipeButtons.Children.Clear();
             GridRecipeButtons.RowDefinitions.Clear();
             GridRecipeButtons.ColumnDefinitions.Clear();
+
+            if (recipes == null || recipes.Length <= 0) return;
 
             // Define the columns
             for (int i = 0; i < Columns; i++)

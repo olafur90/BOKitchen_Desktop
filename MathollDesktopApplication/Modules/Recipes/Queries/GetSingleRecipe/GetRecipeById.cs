@@ -7,6 +7,9 @@ using System.Threading.Tasks;
 
 namespace MathollDesktopApplication.Modules.Recipes.Queries.GetSingleRecipe
 {
+    /// <summary>
+    /// Provides functionality to fetch a recipe by its unique identifier.
+    /// </summary>
     public class GetRecipeById
     {
         private readonly int id;

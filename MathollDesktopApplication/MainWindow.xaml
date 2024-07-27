@@ -12,16 +12,17 @@
         <ResourceDictionary Source="pack://application:,,,/Resources/ButtonStyles.xaml"/>
     </Window.Resources>
     <Grid x:Name="GridMainArea">
-        <Grid Height="147" VerticalAlignment="Top" Background="Black" MouseDown="Grid_MouseDown" Panel.ZIndex="1">
-            <Image VerticalAlignment="Center" HorizontalAlignment="Left" Margin="15,0,0,0" Source="/bola_logo.png"/>
-            <ui:Button x:Name="BtnCloseApplication" Content="X" VerticalAlignment="Top" HorizontalAlignment="Right" Background="Red" FontSize="48" FontFamily="Arial Black" Height="50" Width="50" Margin="0,0,2,0" Click="BtnCloseApplication_Click"/>
-            <ui:Button x:Name="btn_close_application_Copy" Content="O" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0,0,57,0" Background="#FF61A6DC" FontSize="48" FontFamily="Arial Black" Height="50" Width="50"/>
-            <ui:Button Content="_" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0,0,112,0" Background="#FF61A6DC" FontSize="150" FontFamily="Bauhaus 93" Height="50" Width="50"/>
-            <Rectangle HorizontalAlignment="Left" Height="52" Margin="1435,0,0,0" Stroke="Black" VerticalAlignment="Top" Width="165" Fill="#FF353535" Panel.ZIndex="-1"/>
-            <Button Content="U" Margin="1540,95,0,0" Background="Gray" VerticalAlignment="Top" Height="42" Width="50"/>
+        <Grid x:Name="GridHeader" Height="147" VerticalAlignment="Top" Background="Black" MouseDown="Grid_MouseDown" Panel.ZIndex="1">
+            <Image x:Name="ImageLogo" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="15,0,0,0" Source="/bola_logo.png"/>
+            <Grid x:Name="GridHeaderButtons" VerticalAlignment="Top" HorizontalAlignment="Right" Height="52" Background="#FF353535" Width="164">
+                <ui:Button x:Name="BtnCloseApplication" Content="X" VerticalAlignment="Center" HorizontalAlignment="Right" Background="Red" FontSize="48" FontFamily="Arial Black" Height="50" Width="50" Margin="0,0,2,0" Click="BtnCloseApplication_Click"/>
+                <ui:Button x:Name="BtnMaximizeApplication" Content="O" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,57,0" Background="#FF61A6DC" FontSize="48" FontFamily="Arial Black" Height="50" Width="50"/>
+                <ui:Button x:Name="BtnMinimizeApplication" Content="_" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,112,0" Background="#FF61A6DC" FontSize="150" FontFamily="Bauhaus 93" Height="50" Width="50"/>
+            </Grid>
+            <Button Content="U" Margin="0,95,10,0" Background="Gray" HorizontalAlignment="Right" VerticalAlignment="Top" Height="42" Width="50"/>
         </Grid>
-        <Grid Width="210" HorizontalAlignment="Left" Background="Black" Panel.ZIndex="0" >
-            <Button Content="Allar Uppskriftir" FontWeight="Bold" FontSize="32" HorizontalAlignment="Stretch" Height="70" Opacity="0.92" Margin="0,168,0,0" VerticalAlignment="Top" Background="#FF21441C">
+        <Grid x:Name="GridMenu" Width="210" HorizontalAlignment="Left" Background="Black" Panel.ZIndex="0" >
+            <Button Content="Uppskriftir" FontWeight="Bold" FontSize="32" HorizontalAlignment="Stretch" Height="70" Opacity="0.92" Margin="0,168,0,0" VerticalAlignment="Top" Background="#FF21441C">
                 <Button.Template>
                     <ControlTemplate TargetType="Button">
                         <Border x:Name="border" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="0" CornerRadius="0">
@@ -43,7 +44,7 @@
                     </ControlTemplate>
                 </Button.Template>
             </Button>
-            <Button Content="Button" HorizontalAlignment="Stretch" Height="70" Opacity="0.92" Margin="0,238,0,0" VerticalAlignment="Top" Background="#FF21441C">
+            <Button Content="Notendur" FontWeight="Bold" HorizontalAlignment="Stretch" Height="70" Opacity="0.92" Margin="0,238,0,0" VerticalAlignment="Top" Background="#FF21441C">
                 <Button.Template>
                     <ControlTemplate TargetType="{x:Type Button}">
                         <Border x:Name="border" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="0" CornerRadius="0">
@@ -65,7 +66,7 @@
                     </ControlTemplate>
                 </Button.Template>
             </Button>
-            <Button Content="Button" HorizontalAlignment="Stretch" Height="70" Opacity="0.92" Margin="0,308,0,0" VerticalAlignment="Top" Background="#FF21441C">
+            <Button Content="Sous Vide" FontWeight="Bold" HorizontalAlignment="Stretch" Height="70" Opacity="0.92" Margin="0,308,0,0" VerticalAlignment="Top" Background="#FF21441C">
                 <Button.Template>
                     <ControlTemplate TargetType="{x:Type Button}">
                         <Border x:Name="border" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="0" CornerRadius="0">
@@ -85,7 +86,7 @@
                     </ControlTemplate>
                 </Button.Template>
             </Button>
-            <Button Content="Button" HorizontalAlignment="Stretch" Height="70" Opacity="0.92" Margin="0,378,0,0" VerticalAlignment="Top" Background="#FF21441C">
+            <Button Content="Air Fryer" FontWeight="Bold" HorizontalAlignment="Stretch" Height="70" Opacity="0.92" Margin="0,378,0,0" VerticalAlignment="Top" Background="#FF21441C">
                 <Button.Template>
                     <ControlTemplate TargetType="{x:Type Button}">
                         <Border x:Name="border" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="0" CornerRadius="0">
@@ -106,7 +107,7 @@
                 </Button.Template>
             </Button>
         </Grid>
-        <ScrollViewer VerticalScrollBarVisibility="Auto" Margin="228,157,18,12" RenderTransformOrigin="0.5,0.5">
+        <ScrollViewer x:Name="ScrollViewerRecipes" VerticalScrollBarVisibility="Auto" Margin="228,157,18,12" RenderTransformOrigin="0.5,0.5">
             <ScrollViewer.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
