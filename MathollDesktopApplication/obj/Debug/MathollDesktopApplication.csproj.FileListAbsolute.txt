@@ -120,3 +120,5 @@ C:\Users\Notandi\source\repos\MathollDesktopApplication\MathollDesktopApplicatio
 C:\Users\Notandi\source\repos\MathollDesktopApplication\MathollDesktopApplication\obj\Debug\MathollD.01A1CC77.Up2Date
 C:\Users\Notandi\source\repos\MathollDesktopApplication\MathollDesktopApplication\obj\Debug\UserControls\SettingsView.g.cs
 C:\Users\Notandi\source\repos\MathollDesktopApplication\MathollDesktopApplication\obj\Debug\UserControls\SettingsView.baml
+C:\Users\Notandi\source\repos\MathollDesktopApplication\MathollDesktopApplication\bin\Debug\HandyControl.dll
+C:\Users\Notandi\source\repos\MathollDesktopApplication\MathollDesktopApplication\bin\Debug\HandyControl.xml
