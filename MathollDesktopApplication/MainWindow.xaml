@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:materialIcons="clr-namespace:Material.Icons;assembly=Material.Icons"
         xmlns:local="clr-namespace:MathollDesktopApplication"
+        xmlns:hc="https://handyorg.github.io/handycontrol"
         xmlns:strings="clr-namespace:MathollDesktopApplication"
         xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
         x:Name="mainWindow" 
