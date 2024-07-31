@@ -22,7 +22,7 @@ namespace MathollDesktopApplication.Properties {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class Resources {
+    public class Resources {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
@@ -36,7 +36,7 @@ namespace MathollDesktopApplication.Properties {
         ///   Returns the cached ResourceManager instance used by this class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Resources.ResourceManager ResourceManager {
+        public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
                     global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("MathollDesktopApplication.Properties.Resources", typeof(Resources).Assembly);
@@ -51,7 +51,7 @@ namespace MathollDesktopApplication.Properties {
         ///   resource lookups using this strongly typed resource class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Globalization.CultureInfo Culture {
+        public static global::System.Globalization.CultureInfo Culture {
             get {
                 return resourceCulture;
             }
@@ -63,7 +63,7 @@ namespace MathollDesktopApplication.Properties {
         /// <summary>
         ///   Looks up a localized string similar to 4nF5fHwCq9DXNsO0JLkQBY9rxXfMQcy4.
         /// </summary>
-        internal static string ClientId {
+        public static string ClientId {
             get {
                 return ResourceManager.GetString("ClientId", resourceCulture);
             }
@@ -72,18 +72,54 @@ namespace MathollDesktopApplication.Properties {
         /// <summary>
         ///   Looks up a localized string similar to dev-72yh0oy5imbdaqx8.eu.auth0.com.
         /// </summary>
-        internal static string DomainName {
+        public static string DomainName {
             get {
                 return ResourceManager.GetString("DomainName", resourceCulture);
             }
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Air Fryer.
+        /// </summary>
+        public static string MenuButtonAirFryer {
+            get {
+                return ResourceManager.GetString("MenuButtonAirFryer", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Uppskriftir.
+        /// </summary>
+        public static string MenuButtonRecipes {
+            get {
+                return ResourceManager.GetString("MenuButtonRecipes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Notendur.
+        /// </summary>
+        public static string MenuButtonUsers {
+            get {
+                return ResourceManager.GetString("MenuButtonUsers", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to myapp://callback.
         /// </summary>
-        internal static string RedirectUri {
+        public static string RedirectUri {
             get {
                 return ResourceManager.GetString("RedirectUri", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sous Vide.
+        /// </summary>
+        public static string SousVide {
+            get {
+                return ResourceManager.GetString("SousVide", resourceCulture);
             }
         }
     }

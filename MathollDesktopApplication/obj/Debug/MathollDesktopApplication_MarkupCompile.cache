@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\Notandi\source\repos\MathollDesktopApplication\MathollDesktopApplication\App.xaml
-6-1470063240
+7-808093481
 5-935260911
-18482551215
+20-356260202
 591037823428
-MainWindow.xaml;Modules\Recipes\RecipeWindow\RecipeWindow.xaml;UserControls\AirFryerView.xaml;UserControls\RecipeView.xaml;Resources\ButtonStyles.xaml;UserControls\SousVideView.xaml;
+MainWindow.xaml;Modules\Recipes\RecipeWindow\RecipeWindow.xaml;UserControls\AirFryerView.xaml;UserControls\RecipeView.xaml;Resources\ButtonStyles.xaml;UserControls\SettingsView.xaml;UserControls\SousVideView.xaml;
 
 False
 

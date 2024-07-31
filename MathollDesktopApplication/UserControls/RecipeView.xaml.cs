@@ -1,22 +1,11 @@
-﻿using MathollDesktopApplication.Entities;
-using MathollDesktopApplication.Modules.Recipes.Queries.GetAllRecipes;
-using MathollDesktopApplication.Modules.Recipes.Queries.GetAllRecipesRequest;
+﻿using MathollDesktopApplication.Modules.Recipes.Queries.GetAllRecipes;
 using MathollDesktopApplication.Modules.Recipes.RecipeWindow;
 using System;
-using System.Collections.Generic;
-using System.Diagnostics;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+using Wpf.Ui.Controls;
 
 namespace MathollDesktopApplication
 {
@@ -27,12 +16,15 @@ namespace MathollDesktopApplication
     {
         private const int Columns = 4;
         RecipeDTO[] recipes;
+        ProgressRing progressRing;
+
         public RecipeView()
         {
             InitializeComponent();
             this.SizeChanged += RecipeView_SizeChanged;
-            
-            if (recipes == null) LoadRecipes();
+
+            LoadRecipes();
+
         }
 
         /// <summary>
@@ -68,6 +60,17 @@ namespace MathollDesktopApplication
 
         private async void LoadRecipes()
         {
+            progressRing = new ProgressRing
+            {
+                HorizontalAlignment = HorizontalAlignment.Center,
+                VerticalAlignment = VerticalAlignment.Center,
+                Visibility = Visibility.Visible,
+                IsIndeterminate = true
+            };
+            GridRecipeButtons.Children.Add(progressRing);
+
+            progressRing.Visibility = Visibility.Visible;
+
             recipes = await RecipeCache.GetRecipes();
             PopulateRecipeGrid();
         }
@@ -75,8 +78,6 @@ namespace MathollDesktopApplication
         /// <summary>
         /// Gets all existing recipes from the database with minimum details.
         /// </summary>
-        /// TODO: Only get the basic details for the recipes. Only get all the details when the recipe has been clicked and loaded into RecipeWindow
-        /// TODO: So, basically should be calling something like GetRecipesShort or something like that, and later call GetRecipeWithDetail when clicked.
         public void PopulateRecipeGrid()
         {
             if (recipes == null || recipes.Length <= 0)

@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:materialIcons="clr-namespace:Material.Icons;assembly=Material.Icons"
         xmlns:local="clr-namespace:MathollDesktopApplication"
-        xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml" 
+        xmlns:strings="clr-namespace:MathollDesktopApplication"
+        xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
         x:Name="mainWindow" 
         x:Class="MathollDesktopApplication.MainWindow"
         mc:Ignorable="d"
@@ -13,18 +14,22 @@
     <Window.Resources>
         <ResourceDictionary Source="pack://application:,,,/Resources/ButtonStyles.xaml"/>
     </Window.Resources>
+    <Window.CommandBindings>
+        <CommandBinding Command="{x:Static SystemCommands.MaximizeWindowCommand}" CanExecute="CommandBinding_CanExecute" Executed="CommandBinding_Executed_2" />
+        <CommandBinding Command="{x:Static SystemCommands.MinimizeWindowCommand}" CanExecute="CommandBinding_CanExecute" Executed="CommandBinding_Executed_3" />
+    </Window.CommandBindings>
     <Grid x:Name="GridMainArea">
-        <Grid x:Name="GridHeader" Height="147" VerticalAlignment="Top" Background="Black" MouseDown="Grid_MouseDown" Panel.ZIndex="1">
-            <Image x:Name="ImageLogo" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="15,0,0,0" Source="/bola_logo.png"/>
+        <Grid x:Name="GridHeader" Height="147" VerticalAlignment="Top" Background="Black" MouseDown="Grid_MouseDown" Panel.ZIndex="1" MouseLeftButtonDown="GridHeader_MouseLeftButtonDown">
+            <Image x:Name="ImageLogo" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="15,0,0,0" Source="/bola_logo.png" Height="127"/>
             <Grid x:Name="GridHeaderButtons" VerticalAlignment="Top" HorizontalAlignment="Right" Height="52" Background="#FF353535" Width="164">
                 <ui:Button x:Name="BtnCloseApplication" Content="X" VerticalAlignment="Center" HorizontalAlignment="Right" Background="Red" FontSize="48" FontFamily="Arial Black" Height="50" Width="50" Margin="0,0,2,0" Click="BtnCloseApplication_Click"/>
-                <ui:Button x:Name="BtnMaximizeApplication" Content="O" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,57,0" Background="#FF61A6DC" FontSize="48" FontFamily="Arial Black" Height="50" Width="50"/>
-                <ui:Button x:Name="BtnMinimizeApplication" Content="_" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,112,0" Background="#FF61A6DC" FontSize="150" FontFamily="Bauhaus 93" Height="50" Width="50"/>
+                <ui:Button x:Name="BtnMaximizeApplication" Content="O" Command="{x:Static SystemCommands.MaximizeWindowCommand}" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,57,0" Background="#FF61A6DC" FontSize="48" FontFamily="Arial Black" Height="50" Width="50"/>
+                <ui:Button x:Name="BtnMinimizeApplication" Content="_" Command="{x:Static SystemCommands.MinimizeWindowCommand}" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,112,0" Background="#FF61A6DC" FontSize="150" FontFamily="Bauhaus 93" Height="50" Width="50"/>
             </Grid>
-            <Button Content="U" Margin="0,95,10,0" Background="Gray" HorizontalAlignment="Right" VerticalAlignment="Top" Height="42" Width="50"/>
+
         </Grid>
         <Grid x:Name="GridMenu" Width="210" HorizontalAlignment="Left" Background="Black" Panel.ZIndex="0" >
-            <Button x:Name="BtnMenuButtonRecipes" Content="Uppskriftir" FontWeight="Bold" FontSize="32" HorizontalAlignment="Stretch" Height="70" Opacity="0.92" Margin="0,168,0,0" VerticalAlignment="Top" Background="#FF21441C" Click="BtnMenuButtonRecipes_Click">
+            <Button x:Name="BtnMenuButtonRecipes" Content="Uppskriftir" FontWeight="Bold" FontSize="32" HorizontalAlignment="Stretch" Height="70" Opacity="0.92" Margin="0,147,0,0" VerticalAlignment="Top" Background="#FF21441C" Click="BtnMenuButtonRecipes_Click">
                 <Button.Template>
                     <ControlTemplate TargetType="Button">
                         <Border x:Name="border" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="0" CornerRadius="0">
@@ -46,7 +51,7 @@
                     </ControlTemplate>
                 </Button.Template>
             </Button>
-            <Button x:Name="BtnMenuButtonUsers" Content="Notendur" FontWeight="Bold" HorizontalAlignment="Stretch" Height="70" Opacity="0.92" Margin="0,238,0,0" VerticalAlignment="Top" Background="#FF21441C">
+            <Button x:Name="BtnMenuButtonUsers" Content="Notendur" FontWeight="Bold" HorizontalAlignment="Stretch" Height="70" Opacity="0.92" Margin="0,217,0,0" VerticalAlignment="Top" Background="#FF21441C">
                 <Button.Template>
                     <ControlTemplate TargetType="{x:Type Button}">
                         <Border x:Name="border" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="0" CornerRadius="0">
@@ -68,7 +73,7 @@
                     </ControlTemplate>
                 </Button.Template>
             </Button>
-            <Button x:Name="BtnMenuButtonSousVide" Content="Sous Vide" FontWeight="Bold" HorizontalAlignment="Stretch" Height="70" Opacity="0.92" Margin="0,308,0,0" VerticalAlignment="Top" Background="#FF21441C" Click="BtnMenuButtonSousVide_Click">
+            <Button x:Name="BtnMenuButtonSousVide" Content="Sous Vide" FontWeight="Bold" HorizontalAlignment="Stretch" Height="70" Opacity="0.92" Margin="0,287,0,0" VerticalAlignment="Top" Background="#FF21441C" Click="BtnMenuButtonSousVide_Click">
                 <Button.Template>
                     <ControlTemplate TargetType="{x:Type Button}">
                         <Border x:Name="border" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="0" CornerRadius="0">
@@ -88,7 +93,47 @@
                     </ControlTemplate>
                 </Button.Template>
             </Button>
-            <Button x:Name="BtnMenuButtonAirFryer" Content="Air Fryer" FontWeight="Bold" HorizontalAlignment="Stretch" Height="70" Opacity="0.92" Margin="0,378,0,0" VerticalAlignment="Top" Background="#FF21441C" Click="BtnMenuButtonAirFryer_Click">
+            <Button x:Name="BtnMenuButtonAirFryer" Content="Air Fryer" FontWeight="Bold" HorizontalAlignment="Stretch" VerticalAlignment="Top" Margin="0,357,0,0" Height="70" Opacity="0.92" Background="#FF21441C" Click="BtnMenuButtonAirFryer_Click">
+                <Button.Template>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border x:Name="border" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="0" CornerRadius="0">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="border" Property="Background" Value="LightGreen" />
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter TargetName="border" Property="Background" Value="DarkGreen" />
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="False">
+                                <Setter TargetName="border" Property="Background" Value="Gray" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+            <Button x:Name="BtnMenuButtonSettings" Content="Stillingar" FontWeight="Bold" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Height="70" Opacity="0.92" Margin="0,0,0,70" Background="#FF21441C" Click="BtnMenuButtonSettings_Click">
+                <Button.Template>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border x:Name="border" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="0" CornerRadius="0">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="border" Property="Background" Value="LightGreen" />
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter TargetName="border" Property="Background" Value="DarkGreen" />
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="False">
+                                <Setter TargetName="border" Property="Background" Value="Gray" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+            <Button x:Name="BtnMenuButtonLogout" Content="Útskráning" FontWeight="Bold" HorizontalAlignment="Stretch" Height="70" Opacity="0.92" Margin="0,0,0,0" VerticalAlignment="Bottom" Background="IndianRed" Click="BtnMenuButtonLogout_Click">
                 <Button.Template>
                     <ControlTemplate TargetType="{x:Type Button}">
                         <Border x:Name="border" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="0" CornerRadius="0">

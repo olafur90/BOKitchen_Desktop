@@ -208,11 +208,19 @@
     </ApplicationDefinition>
     <Compile Include="Entities\SousVideItem.cs" />
     <Compile Include="Modules\Recipes\Queries\GetAllRecipes\RecipeCache.cs" />
+    <Compile Include="Properties\Strings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Strings.resx</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\AirFryerView.xaml.cs">
       <DependentUpon>AirFryerView.xaml</DependentUpon>
     </Compile>
     <Compile Include="UserControls\RecipeView.xaml.cs">
       <DependentUpon>RecipeView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\SettingsView.xaml.cs">
+      <DependentUpon>SettingsView.xaml</DependentUpon>
     </Compile>
     <Compile Include="UserControls\SousVideView.xaml.cs">
       <DependentUpon>SousVideView.xaml</DependentUpon>
@@ -225,7 +233,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="AuthService.cs" />
+    <Compile Include="Services\AuthService.cs" />
     <Compile Include="Entities\Difficulty.cs" />
     <Compile Include="Entities\Recipe.cs" />
     <Compile Include="Entities\User.cs" />
@@ -246,6 +254,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Resources\ButtonStyles.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\SettingsView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -275,7 +287,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
+      <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <Content Include="appsettings.json">
@@ -284,6 +296,10 @@
     <Content Include="Assets\SousVideHitatafla.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <EmbeddedResource Include="Properties\Strings.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Strings.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

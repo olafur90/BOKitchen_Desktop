@@ -24,6 +24,37 @@ namespace MathollDesktopApplication
         }
 
         /// <summary>
+        /// Handles the CanExecute event for the CommandBinding.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The CanExecuteRoutedEventArgs that contains the event data.</param>
+        private void CommandBinding_CanExecute(object sender, CanExecuteRoutedEventArgs e)
+        {
+            e.CanExecute = true;
+        }
+
+        /// <summary>
+        /// Handles the Executed event for the CommandBinding when the user wants to maximize/restore the window.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The ExecutedRoutedEventArgs that contains the event data.</param>
+        private void CommandBinding_Executed_2(object sender, ExecutedRoutedEventArgs e)
+        {
+            if (this.WindowState == WindowState.Maximized) SystemCommands.RestoreWindow(this);
+            else SystemCommands.MaximizeWindow(this);
+        }
+
+        /// <summary>
+        /// Handles the Executed event for the CommandBinding when the user wants to minimize the window to the taskbar.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The ExecutedRoutedEventArgs that contains the event data.</param>
+        private void CommandBinding_Executed_3(object sender, ExecutedRoutedEventArgs e)
+        {
+            SystemCommands.MinimizeWindow(this);
+        }
+
+        /// <summary>
         /// Checks the current login status of the user. 
         /// If the user is not logged in, hides the current window and initiates the login process.
         /// Once the user is logged in, retrieves the user's name and email, then shows the window.
@@ -51,14 +82,6 @@ namespace MathollDesktopApplication
                 this.Show();
             }
         }
-
-        /* TODO: Need to connect this to some button in the UI.
-        private async void Button_Click(object sender, RoutedEventArgs e)
-        {
-            await AuthService.Instance.LogOut();
-            CheckLoginStatusAsync();
-        }
-        */
 
         /// <summary>
         /// Handles the MouseDown event for the Grid.
@@ -109,9 +132,58 @@ namespace MathollDesktopApplication
             MainContentControl.Content = new RecipeView();
         }
 
+        /// <summary>
+        /// Handles the Click event for the Air Fryer menu button.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The RoutedEventArgs that contains the event data.</param>
         private void BtnMenuButtonAirFryer_Click(object sender, RoutedEventArgs e)
         {
             MainContentControl.Content = new AirFryerView();
+        }
+
+        /// <summary>
+        /// Handles the Click event for the Settings menu button.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The RoutedEventArgs that contains the event data.</param>
+        private void BtnMenuButtonSettings_Click(object sender, RoutedEventArgs e)
+        {
+            MainContentControl.Content = new SettingsView();
+        }
+
+        /// <summary>
+        /// Handles the MouseLeftButtonDown event for the Banner Grid to toggle between Maximized and Normal states.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void GridHeader_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            // Check if the click count is 2, indicating a double-click
+            if (e.ClickCount == 2)
+            {
+                // Toggle between Maximized and Normal states
+                if (this.WindowState == WindowState.Maximized)
+                {
+                    this.WindowState = WindowState.Normal;
+                }
+                else
+                {
+                    this.WindowState = WindowState.Maximized;
+                }
+            }
+        }
+
+        /// <summary>
+        /// Handles the Click event for the Logout menu button.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The RoutedEventArgs that contains the event data.</param>
+        private async void BtnMenuButtonLogout_Click(object sender, RoutedEventArgs e)
+        {
+            System.Windows.MessageBoxResult result = System.Windows.MessageBox.Show("Are you sure you want to logout?", "Logout", System.Windows.MessageBoxButton.YesNo, MessageBoxImage.Question);
+            if (result == System.Windows.MessageBoxResult.Yes) await AuthService.Instance.LogOut();
+            CheckLoginStatusAsync();
         }
     }
 }

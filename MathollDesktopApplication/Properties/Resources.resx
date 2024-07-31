@@ -123,7 +123,19 @@
   <data name="DomainName" xml:space="preserve">
     <value>dev-72yh0oy5imbdaqx8.eu.auth0.com</value>
   </data>
+  <data name="MenuButtonAirFryer" xml:space="preserve">
+    <value>Air Fryer</value>
+  </data>
+  <data name="MenuButtonRecipes" xml:space="preserve">
+    <value>Uppskriftir</value>
+  </data>
+  <data name="MenuButtonUsers" xml:space="preserve">
+    <value>Notendur</value>
+  </data>
   <data name="RedirectUri" xml:space="preserve">
     <value>myapp://callback</value>
+  </data>
+  <data name="SousVide" xml:space="preserve">
+    <value>Sous Vide</value>
   </data>
 </root>
